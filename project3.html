@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ <style>
+   *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+body,html{
+    height: 100%;
+    width: 100%;
+}
+
+.main{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cursor{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    mix-blend-mode: difference;
+    transition: all linear 0.2s;   
+
+}
+h1{
+    font-size: 10vw;
+    
+}
+ 
+ </style>
+</head>
+<body>
+    <div class="main">
+    <div class="cursor">
+    </div>
+    <h1>Frontend</h1>
+
+    </div>
+    <script>
+var main=document.querySelector(".main");
+ var cursor=document.querySelector(".cursor");
+
+ main.addEventListener("mousemove",function(e){
+     console.log("x value=",e.x,"y value=",e.y)
+     cursor.style.left =e.x+"px";
+    cursor.style.top =e.y+"px";
+
+ })
+    </script>
+</body>
+</html>
